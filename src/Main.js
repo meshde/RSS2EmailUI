@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tags from './Tags';
+import './Main.css';
 
 class Main extends Component {
   constructor(){
@@ -27,10 +28,12 @@ class Main extends Component {
   render() {
     return (
       <div className="Main">
-        <input type="text" id="url" />
-        <button id="submit" onClick={this.handle}>
-          Submit
-        </button>
+        <div className="Main-url" >
+          <input type="text" className="inp" id="url" />
+          <button className="inp" id="submit" onClick={this.handle}>
+            Submit
+          </button>
+        </div>
         <Tags list={this.state.list} />
         <textarea id="txt" ></textarea>
       </div>

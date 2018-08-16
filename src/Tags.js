@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Tags extends Component {
+  constructor(){
+    super();
+    this.handle = this.handle.bind(this);
+  }
   handle(item) {
     var txt = document.getElementById('txt');
     var start = txt.selectionStart;
@@ -19,7 +23,7 @@ class Tags extends Component {
             (item) => 
             <li className="item" onClick={
               () => { 
-                this.handle(item) 
+                this.handle(item);
               }
             } >
               { item }
