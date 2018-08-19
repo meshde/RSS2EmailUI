@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Tags.css';
 
 class Tags extends Component {
   constructor(){
@@ -17,20 +18,22 @@ class Tags extends Component {
     
   render() {
     return(
-      <ul className="list">
-        {
-          this.props.list.map(
-            (item) => 
-            <li className="item" onClick={
-              () => { 
-                this.handle(item);
-              }
-            } >
-              { item }
-            </li>
-          )
-        }
-      </ul>
+      <div className="list inp">
+        <ul>
+          {
+            this.props.list.map(
+              (item) =>
+              <li className="item" onClick={
+                () => {
+                  this.handle(item);
+                }
+              } >
+                { item }
+              </li>
+            )
+          }
+        </ul>
+      </div>
     );
   }
 }

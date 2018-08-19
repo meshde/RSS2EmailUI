@@ -34,8 +34,10 @@ class Main extends Component {
             Submit
           </button>
         </div>
-        <Tags list={this.state.list} />
-        <textarea id="txt" ></textarea>
+        <div className="edit" >
+          <Tags list={this.state.list} />
+          <textarea className="inp" id="txt" rows="20"></textarea>
+        </div>
       </div>
     );
   }
