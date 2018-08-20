@@ -5,8 +5,16 @@
   height: 100%;
   margin-right: 9%;
   margin-left: 3%;
+  overflow-y: scroll;
 }
 
+.outer {
+  padding-left: 4%;
+}
+
+.inner {
+  margin-top: 5%;
+}
 .item {
-  padding: 2% 2%;
+  padding: 4% 2%;
 }
