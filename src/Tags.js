@@ -23,11 +23,14 @@ class Tags extends Component {
   }
 
   handleItems() {
+    var itemTags = this.props.list["RSSITEMS"];
     var textToAdd = "";
     textToAdd += "{{RSSITEMS}}\n";
-    this.props.list["RSSITEMS"].map(function(item) {
-      textToAdd += "{{" + item + "}}\n";
-    });
+    textToAdd += "<div>";
+    textToAdd += "<a href='{{RSSITEM:link}}'>";
+    textToAdd += "<h3>{{RSSITEM:title}}</h3></a>";
+    textToAdd += "<i syle='font-style:italic'>{{RSSITEM:pubDate}}</i>";
+    textToAdd += "<p>{{RSSITEM:description}}</p>";
     textToAdd += "{{/RSSITEMS}}\n\n";
     this.addToText(textToAdd);
   }

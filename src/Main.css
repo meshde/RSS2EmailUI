@@ -56,4 +56,6 @@ button {
   height: 60%;
   left: 10%;
   top: 25%;
+  overflow-y: scroll;
+  margin-bottom: 5%;
 }
