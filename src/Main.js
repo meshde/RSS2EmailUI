@@ -43,9 +43,12 @@ class Main extends Component {
 
   getTags(val) {
     var ret;
-    var url = this.url+"rss/extract?url="+val;
+    var url = this.url+"rss/extract";
     // console.log(url);
-    axios.get(url).then(function(response){
+    axios.post(url, {
+      url: val
+    })
+      .then(function(response){
       console.log(response);
       ret = response.data.rss_tags;
 
