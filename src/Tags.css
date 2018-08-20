@@ -1,10 +1,10 @@
 .list {
   /* display: iniline; */
   float: left;
-  width: 18%;
+  width: 16%;
   height: 100%;
-  margin-right: 9%;
-  margin-left: 3%;
+  margin-right: 8%;
+  margin-left: 6%;
   overflow-y: scroll;
 }
 

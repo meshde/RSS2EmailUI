@@ -1,5 +1,6 @@
 .Main {
   height: 100%;
+  position: relative;
 }
 
 .Main-url {
@@ -25,11 +26,14 @@
   width: 70%;
 }
 
-#submit {
-  margin-left: 5%;
+button {
   width: 15%;
   background-color: #4CAF50;
   color: white;
+}
+
+#submit {
+  margin-left: 5%;
 }
 
 #txt {
@@ -39,3 +43,17 @@
   resize: none;
 }
 
+#resolve {
+  position: absolute;
+  left: 40%;
+  top: 84%;
+}
+
+#output {
+  display: none;
+  position: relative;
+  width: 70%;
+  height: 60%;
+  left: 10%;
+  top: 25%;
+}
