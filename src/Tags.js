@@ -5,6 +5,7 @@ class Tags extends Component {
   constructor(){
     super();
     this.handle = this.handle.bind(this);
+    console.l
   }
   handle(item) {
     var txt = document.getElementById('txt');
@@ -21,16 +22,19 @@ class Tags extends Component {
       <div className="list inp">
         <ul>
           {
-            this.props.list.map(
-              (item) =>
-              <li className="item" onClick={
-                () => {
-                  this.handle(item);
-                }
-              } >
-                { item }
-              </li>
-            )
+            Object.keys(this.props.list).map(function(key){
+
+              return this.props.list[key].map(
+                (item) =>
+                <li className="item" onClick={
+                  () => {
+                    this.handle(item);
+                  }
+                } >
+                  { item }
+                </li>
+              )
+            }, this)
           }
         </ul>
       </div>

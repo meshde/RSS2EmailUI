@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import Tags from './Tags';
 import './Main.css';
+import axios from 'axios';
 
 class Main extends Component {
   constructor(){
     super();
     this.state = {
-      list: [],
+      list: {}
     }
+    this.url = "http://172.16.164.59:80/";
     this.handle = this.handle.bind(this);
+    this.getTags = this.getTags.bind(this);
   }
 
   handle() {
     var val = document.getElementById('url').value;
     var tags = this.getTags(val);
+    console.log(tags)
     this.setState(
       {
         list: tags,
@@ -22,7 +26,17 @@ class Main extends Component {
   }
 
   getTags(val) {
-    return [val, val, val];
+    var ret;
+    // var url = this.url+"rss/extract?url="+val;
+    // // console.log(url);
+    // axios.get(url).then(function(response){
+    //   console.log(response);
+    //   ret = response.data;
+    // }).catch(function(error){
+    //   console.log(error);
+    // });
+    ret = {'rss': [1,2,3], 'item': [4,5,6]};
+    return ret;
   }
 
   render() {
