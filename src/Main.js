@@ -28,9 +28,18 @@ class Main extends Component {
     })
       .then(function(response){
         document.getElementById('output').innerHTML = response.data;
-        document.getElementById('output').style.display = "block";
+        document.getElementById('myModal').style.display = "block";
       })
   }
+
+  close(event) {
+    if (event.target === document.getElementById('myModal') ||
+      event.target === document.getElementsByClassName('close')[0]
+    ){
+      document.getElementById('myModal').style.display = "none";
+    }
+  }
+
 
   getTags(val) {
     var ret;
@@ -69,7 +78,12 @@ class Main extends Component {
         <button className="inp" id="resolve" onClick={this.resolve}>
           Resolve
         </button>
-        <div className="inp" id="output">
+        <div id="myModal" class="modal" onClick={this.close}>
+          <div class="modal-content">
+            <span class="close" onClick={this.close}>&times;</span>
+            <div id="output">
+            </div>
+          </div>
         </div>
       </div>
     );
